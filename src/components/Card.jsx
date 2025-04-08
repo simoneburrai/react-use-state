@@ -1,5 +1,4 @@
 const Card = ({ languages, languagesValue }) => {
-    console.log(languages);
     let header = undefined;
     let content = "Nessun Bottone Attivo";
     if (languagesValue != null) {
