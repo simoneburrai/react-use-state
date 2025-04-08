@@ -4,11 +4,21 @@ import Card from "./Card";
 import { useState } from "react";
 
 const Main = () => {
+    const [active, setActive] = useState(false);
+    const [clickedLanguage, setClickedLanguage] = useState(null);
+    const languageClicked = (id) => {
+        setClickedLanguage(clickedLanguage === id ? null : id);
+        setActive(active => {
+            active = false;
+            return active
+        });
+    }
     return <main>
         <div className="button-container">
-            {languages.map(language => <Button key={language.id} title={language.title} />)}
+            {languages.map(language => <Button key={language.id} title={language.title} active={clickedLanguage === language.id} onToggle={languageClicked} id={language.id} />)}
         </div>
-        <Card />
+        <Card languagesValue={clickedLanguage} languages={languages}>
+        </Card>
     </main>
 }
 
