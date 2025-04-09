@@ -6,8 +6,8 @@ import { useState } from "react";
 const Main = () => {
     const [active, setActive] = useState(false);
     const [clickedLanguage, setClickedLanguage] = useState(null);
-    const languageClicked = (id) => {
-        setClickedLanguage(clickedLanguage === id ? null : id);
+    const languageClicked = (obj) => {
+        setClickedLanguage(clickedLanguage === obj ? null : obj);
         setActive(active => {
             active = false;
             return active
@@ -16,13 +16,14 @@ const Main = () => {
     return <main>
         <div className="button-container">
             {languages.map(language => <Button
+                language={language}
                 key={language.id}
                 title={language.title}
-                active={clickedLanguage === language.id}
+                active={clickedLanguage === language}
                 onToggle={languageClicked}
-                id={language.id} />)}
+            />)}
         </div>
-        <Card language={languages.find(language => language.id === clickedLanguage)}>
+        <Card language={clickedLanguage}>
         </Card>
     </main>
 }
