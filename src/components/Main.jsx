@@ -18,8 +18,11 @@ const Main = () => {
                     clickedLanguage.id === language.id}
             />)}
         </div>
-        <Card language={clickedLanguage}>
-        </Card>
+        {clickedLanguage ?
+            (<Card language={clickedLanguage}>
+            </Card>) :
+            <div className="card">Nessun Bottone trovato</div>
+        }
     </main>
 }
 
