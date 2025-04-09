@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-function Button({ onToggle, language, className }) {
+function Button({ onToggle, language, isClicked }) {
     const toggle = () => {
         onToggle(language);
 
     }
     return <button
-        className={className}
+        className={isClicked ? "active" : ""}
         onClick={toggle}
     >{language.title}</button>
 }

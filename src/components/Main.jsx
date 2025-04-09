@@ -14,7 +14,8 @@ const Main = () => {
                 language={language}
                 key={language.id}
                 onToggle={languageClicked}
-                className={clickedLanguage && clickedLanguage.id === language.id ? "active" : ""}
+                isClicked={clickedLanguage &&
+                    clickedLanguage.id === language.id}
             />)}
         </div>
         <Card language={clickedLanguage}>
