@@ -18,7 +18,6 @@ const Main = () => {
             {languages.map(language => <Button
                 language={language}
                 key={language.id}
-                title={language.title}
                 active={clickedLanguage === language}
                 onToggle={languageClicked}
             />)}
