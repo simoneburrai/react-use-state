@@ -15,7 +15,12 @@ const Main = () => {
     }
     return <main>
         <div className="button-container">
-            {languages.map(language => <Button key={language.id} title={language.title} active={clickedLanguage === language.id} onToggle={languageClicked} id={language.id} />)}
+            {languages.map(language => <Button
+                key={language.id}
+                title={language.title}
+                active={clickedLanguage === language.id}
+                onToggle={languageClicked}
+                id={language.id} />)}
         </div>
         <Card languagesValue={clickedLanguage} languages={languages}>
         </Card>
