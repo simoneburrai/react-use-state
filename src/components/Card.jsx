@@ -1,14 +1,11 @@
-const Card = ({ languages, languagesValue }) => {
+const Card = ({ language }) => {
     let header = undefined;
     let content = "Nessun Bottone Attivo";
-    if (languagesValue != null) {
-        const currentLanguage = languages.find(language =>
-            language.id === languagesValue)
-        if (currentLanguage) {
-            header = <h2>{currentLanguage.title}</h2>;
-            content = currentLanguage.description;
-        }
+    if (language) {
+        header = <h2>{language.title}</h2>;
+        content = language.description;
     }
+
     return <div className="card">
         {header}
         {content}

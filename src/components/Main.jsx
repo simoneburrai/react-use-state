@@ -22,7 +22,7 @@ const Main = () => {
                 onToggle={languageClicked}
                 id={language.id} />)}
         </div>
-        <Card languagesValue={clickedLanguage} languages={languages}>
+        <Card language={languages.find(language => language.id === clickedLanguage)}>
         </Card>
     </main>
 }
